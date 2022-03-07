@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="aos.css_">
+    <title>Ristorante | Cibo.</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+    <header>
+        <!-- <a href="" class="logo">Cibo<span class="stand-out">.</span></a> -->
+        <img class="logo" src="./img/logo.PNG" alt="">
+        <img class="logo-white" src="./img/logo_white.png" alt="">
+        <div onclick="toggleMenu()" class="toggle"></div>
+        <ul id="header-menu" class="menu">
+            <li><a style="--i: 1;" onclick="toggleMenu()" href="#home">Home</a></li>
+            <li><a style="--i: 2;" onclick="toggleMenu()" href="#about">Su di noi</a></li>
+            <li><a style="--i: 3;" onclick="toggleMenu()" href="#menu">Menu</a></li>
+            <!-- <li><a style="--i: 4;" onclick="toggleMenu()" href="#chef">Lo Chef</a></li> -->
+            <li><a style="--i: 4;" onclick="toggleMenu()" href="#testimonials">Testimonianze</a></li>
+            <li><a style="--i: 5;" onclick="toggleMenu()" href="#contact">Contattaci</a></li>
+        </ul>
+    </header>
+
+    <section id="1" class="banner">
+        <div class="textBx">
+            <h2>Scegli <span class="stand-out">il meglio!</span></h2>
+            <h3>La carne migliore della tua città.</h3>
+            <a href="#about" class="btn">Scopri di più</a>
+        </div>
+    </section>
+
+    <section id="2" class="about">
+        <div class="heading" data-aos="fade-down">
+          <h2>Su di noi</h2>
+        </div>
+        <div class="content">
+          <div class="contentBx w50" data-aos="fade-right">
+            <h3>Specializzati in carne di qualità.</h3>
+            <p>Prepariamo la migliore carne della città dal 1900<br><br>
+                Ci siamo specializzati nella preparazione della carne <br><br>
+                Attraverso un processo di cottura proprietario e alla materia prima di primo livello riusciamo a garantire una carne morbida e saporita, la migliroe che potrai mai provare a Roma</p>
+          </div>
+          <div class="w50" data-aos="fade-left">
+            <img src="./img/about.jpg" class="img" alt="">
+          </div>
+        </div>
+    </section>
+
+    <section id="3" class="menu">
+        <div class="heading" data-aos="fade-down">
+          <h2>Il nostro <span class="stand-out">M</span>enu</h2>
+        </div>
+        <div class="content" data-aos="fade-left">
+          <div class="menuBx">
+            <div class="menu-item" data-aos="fade-left" data-aos-delay="100">
+                <div>
+                    <img src="./img/menu/bistecca.jpeg" alt="">
+                    Bistecca Laziale
+                </div>
+                <span class="stand-out"> 40€ </span>
+            </div>
+            <div class="menu-item" data-aos="fade-left" data-aos-delay="200">
+                <div>
+                    <img src="./img/menu/tagliata.jpeg" alt="">
+                    Tagliata di Manzo
+                </div>
+                <span class="stand-out"> 40€ </span>
+            </div>
+            <div class="menu-item" data-aos="fade-left" data-aos-delay="300">
+                <div>
+                    <img src="./img/menu/costine.jpg" alt="">
+                    Costine Romane
+                </div>
+                <span class="stand-out"> 40€ </span>
+            </div>
+            <div class="menu-item" data-aos="fade-left" data-aos-delay="400">
+                <div>
+                    <img src="./img/menu/pollo.jpg" alt="">
+                    Pollo Arosto
+                </div>
+                <span class="stand-out"> 40€ </span>
+            </div>
+            <div class="menu-item" data-aos="fade-left" data-aos-delay="500">
+                <div>
+                    <img src="./img/menu/spiedini.jpg" alt="">
+                    Spiedini Abbruzzesi
+                </div>
+                <span class="stand-out"> 40€ </span>
+            </div>
+          </div>
+        </div>
+    </section>
+
+    <!-- <section id="chef" class="chef">
+        <div class="heading" data-aos="fade-down">
+          <h2>Il nostro <span class="stand-out">Chef</span></h2>
+        </div>
+        <div class="content" data-aos="fade-right">
+          <div class="chefBx">
+              <img src="./img/chef.png" alt="">
+              <div class="chef-name">Alessandro Bergamotto</div>
+          </div>
+        </div>
+    </section> -->
+
+    <section id="4" class="contact">
+      <div class="heading" data-aos="fade-down">
+        <h2>Contattaci</h2>
+        <p>Per maggiori informazioni, PRENOTAZIONI o dubbi mandaci un messaggio</p>
+      </div>
+      <div class="content" data-aos="fade-right">
+        <div class="formBx">
+          <form class="contact-form" (submit)="sendEmail($event)">
+            <input type="text" placeholder="Nome" name="user_name">
+            <input type="email" placeholder="Email" name="user_email">
+            <textarea name="message" placeholder="Messaggio"></textarea>
+            <input type="submit" value="Invia">
+            <span *ngIf="sendSuccess" style="color: green">Messaggio Inviato con Successo</span>
+          </form>
+        </div>
+      </div>
+      </section>
+
+    <section id="5" class="testimonial">
+        <div class="heading" data-aos="fade-down">
+            <h2>Testimonianze</h2>
+            <p>Alcuni dei nostri clienti soddisfatti!</p>
+        </div>
+        <div class="content">
+            <!-- COMPONENTE -->
+            <div class="testimonialBx"  data-aos="fade-left">
+                <div class="author">
+                    <h3>Roberta Vignali <br> <span>Specialista di carne alla griglia</span></h3>
+                    <img src="./img/authors/author1.jpg" alt="">
+                </div>
+                <p>Che dire, tutto veramente ottimo, una delle migliori carni che abbia mai mangiato in Italia!</p>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+            </div>
+            <div class="testimonialBx"  data-aos="fade-left">
+                <div class="author">
+                    <h3>Giorgio Vanni <br> <span>Cantante</span></h3>
+                    <img src="./img/authors/author2.jpg" alt="">
+                </div>
+                <p>Ottima Carne di altissima qualità, la consiglio assoluamente a tutti</p>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+            </div>
+            <div class="testimonialBx" data-aos="fade-left">
+                <div class="author">
+                    <h3>Giorgio Vanni <br> <span>Cantante</span></h3>
+                    <img src="./img/authors/author2.jpg" alt="">
+                </div>
+                <p>Personale super cordiale e disponibile, ci sono andato con la famiglia e ci siamo tutti trovati benissimo</p>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+            </div>
+        </div>
+    </section>
+
+
+
+
+    <!-- <a href="https://www.iubenda.com/privacy-policy/89497168" class="iubenda-white iubenda-noiframe iubenda-embed iubenda-noiframe " title="Privacy Policy ">Privacy Policy</a><script type="text/javascript">(function (w,d) {var loader = function () {var s = d.createElement("script"), tag = d.getElementsByTagName("script")[0]; s.src="https://cdn.iubenda.com/iubenda.js"; tag.parentNode.insertBefore(s,tag);}; if(w.addEventListener){w.addEventListener("load", loader, false);}else if(w.attachEvent){w.attachEvent("onload", loader);}else{w.onload = loader;}})(window, document);</script> -->
+
+    <div class="copyright">
+        <p>Copyright © 2021 Stefan Todirica. All Right Reserver.</p>
+    </div>
+    <script src="./aos.js"></script>
+    <script src="./script.js"></script>
+</body>
+</html>
